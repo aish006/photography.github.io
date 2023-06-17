@@ -1,0 +1,505 @@
+
+.box {
+  background: #e0e0e0;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: -20px -20px 60px #ffffff, 20px 20px 60px #d1d1d1;
+  background-color: #f1f1f1;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+body{
+    overflow-x: hidden;
+}
+nav{
+    height: 6rem;
+    width: 100vw;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+  background-color: #ddd;
+  color: black;
+   border-bottom: 3px solid black;
+}
+
+.closebtn {
+  position: absolute;
+   top: 30px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+
+}
+
+.openbtn {
+      position: fixed;
+      top: 30px; /* Adjust the value to position vertically */
+      left: 10px; /* Adjust the value to position horizontally */
+      z-index: 9999; /* Adjust the z-index value if necessary */
+      font-size: 20px;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      float: left;
+      vertical-align: top;
+    }
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  color: hotpink;
+   background-color: black;
+  font-family: Brush Script MT;
+  
+}
+.card1 .card-content1 h1{
+  animation: glow 1s ease-in-out infinite alternate;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 170%;
+   color: black;
+  text-shadow: 2px 2px 9px #000000;
+}
+/*.card1 .card-content1 {
+    padding: 30px;
+    border-radius: 0 0 2px 2px;
+    background-color: black;
+    position: relative;
+    /*top: -30px;*/
+    width: 100%;
+}
+/*.card1 .card-content1 p{
+  background-color: black;*/
+}
+
+.menu-icon {
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.card1 {
+  position: relative;
+ 
+    top: -40px;
+}
+
+.button {
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  border-style: groove;
+}
+section {
+  padding: 50px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 10px;
+  margin-bottom: 30px;
+}
+
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #ee6e73;   
+  font-size: 20px;
+
+}
+.button{
+   color: black;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+
+.p1{
+  font-family: Lucida Sans Typewriter;
+  text-decoration-color: deeppink;
+  color: deeppink;
+}
+article {
+  
+  --title-color: black;
+  
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article h2 {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--h2-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body  {
+  padding: 24px;
+  text-align: center;
+  vertical-align: text-top;
+  vertical-align: top;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.articles:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+
+/************************ 
+Generic layout (demo looks)
+**************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 48px 0;
+  font-family: "Figtree", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  min-height: 100vh;
+}
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+
+}
+.articles:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+}
+
+
+  .article-body {
+    padding-left: 0;
+    text-align: center;
+
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure h2 {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  bottom: -40%;
+  width: auto;
+  padding: 16px;
+  margin-bottom: -100px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/*new card*/
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.card {
+  width: calc(33.33% - 20px);
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.card-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.card-header:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.card-header{
+  font-family: "Bebas Neue", cursive;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+
+}
+.card-header{
+    transform-origin: center;
+  transform: scale(var(--h2-scale));
+  transition: transform 0.4s ease-in-out;
+
+}
+
+
+.card-body {
+  font-size: 18px;
+}
+
+
+ 
+@media screen and (min-width: $breakpoint) {
+  .nav-list {
+    display: block !important;
+  }
+}
+
+
+// Page content 
+article {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+footer p {
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    bottom: -80px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    
+}
+
+@media (max-width: 768px) {
+.hero {
+padding: 3rem;
+}
+article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+  @container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  }
+
+
+  
+

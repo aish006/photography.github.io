@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+	<title>Rachana</title>
+  <style>
+      /* Styling logo */
+    .logo {
+      padding: 1vh 1vw;
+      text-align: center;
+    }
+
+    .logo img {
+      height: 5rem;
+      width: 5rem;
+    }
+
+    /* Styling Links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      width: 88vw;
+      padding: 0 0.7vw;
+      justify-content: space-evenly;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      margin: 0 0.7vw;
+    }
+
+    .nav-links li a:hover {
+      color: #61DAFB;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li a::before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 0%;
+      background-color: #61DAFB;
+      position: absolute;
+      transition: all ease-in-out 250ms;
+      margin: 0 0 0 10%;
+    }
+
+    .nav-links li a:hover::before {
+      width: 80%;
+    }
+
+    /* Styling Buttons */
+    .login-button {
+      background-color: transparent;
+      border: 1.5px solid #f2f5f7;
+      border-radius: 2em;
+      padding: 0.6rem 0.8rem;
+      margin-left: 2vw;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      color: #131418;
+      background-color: #f2f5f7;
+      border: 1.5px solid #f2f5f7;
+      transition: all ease-in-out 350ms;
+    }
+
+    .join-button {
+      color: #131418;
+      background-color: #61DAFB;
+      border: 1.5px solid #61DAFB;
+      border-radius: 2em;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .join-button:hover {
+      color: #f2f5f7;
+      background-color: transparent;
+      border: 1.5px solid #f2f5f7;
+      transition: all ease-in-out 350ms;
+    }
+
+    /* Styling for small screens */
+    @media screen and (max-width: 800px) {
+      /* Show the hamburger icon */
+      .hamburger {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+      }
+
+      /* Hide the regular navigation links */
+      .nav-links {
+        display: none;
+      }
+
+      /* Styling for the hamburger icon */
+      .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+
+      /* Styling for the open state of the hamburger icon */
+      .hamburger.open .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      .hamburger.open .line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      /* Show the navigation links when the hamburger icon is clicked */
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #131418;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 2rem 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+      }
+
+      /* Styling for the navigation links */
+      .nav-links li {
+        margin-bottom: 1rem;
+      }
+
+      .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links li a:hover {
+        color: #61DAFB;
+      }
+    }
+    /* Styling for the open state of the hamburger icon */
+    .hamburger.open .line:nth-child(1) {
+     transform: rotate(-45deg) translate(-5px, 6px);
+     }
+     .hamburger.open .line:nth-child(2) {
+      opacity: 0;
+     }
+     .hamburger.open .line:nth-child(3) {
+     transform: rotate(45deg) translate(-5px, -6px);
+     }
+
+/* Show the navigation links when the hamburger icon is clicked */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #131418;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 2rem 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+/* Styling for the navigation links */
+.nav-links li {
+  margin-bottom: 1rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #61DAFB;
+}
+
+/* Adjust the positioning of the Maternity and Contact Us sections */
+.open .maternity-section {
+  margin-top: -2rem;
+}
+
+.open .contact-section {
+  margin-top: -2rem;
+}
+
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .open .maternity-section,
+  .open .contact-section {
+    margin-top: 0; /* Reset the margin for smaller screens */
+  }
+}
+.navbar {
+  margin-top: -0.1rem;
+}
+
+  
+</style>
+    <link href="style10.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/fc383a6465.js" crossorigin="anonymous"></script>
+ 
+	<link rel="stylesheet" href="index.css">
+
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="index.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+	
+
+	<div class="card1">
+	  <div class="card-content1">
+    
+    </div>
+	 </div>
+
+
+
+<body>
+<header>
+   
+	<nav>
+        <div class="logo">
+           
+        </div>
+        <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+        <ul class="nav-links">
+            <!--<li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="index.html">Home</a> 
+                </li>
+        <!--<li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="about.html">About us</a> 
+                </li>
+
+        <!--<li class="nav-item">
+                <a class="nav-link" href="events.html">Events</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="events.html">Events</a> 
+                </li>
+        <!--<li class="nav-item">
+                <a class="nav-link" href="wedding.html">Wedding</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="wedding.html">Wedding</a> 
+                </li>
+        <!--<li class="nav-item">
+                <a class="nav-link" href="Portrait.html">Portrait</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="Portrait.html">Portrait</a> 
+                </li>
+       <!--<li class="nav-item">
+                <a class="nav-link" href="Candid.html">Candid</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="Candid.html">Candid</a> 
+                </li>
+                <div class="maternity-section">
+        <!--<li class="nav-item">
+                <a class="nav-link" href="Maternity.html">Maternity</a>
+                </li>-->
+
+        <li  class="nav-item">
+                <a class="nav-link" href="Maternity.html">Maternity</a> 
+                </li>
+        </div>
+        <div class="contact-section">
+        <!--<li class="nav-item">
+                <a class="nav-link" href="Contact Us.html">Contact Us</a>
+                </li>-->
+        <li  class="nav-item">
+                <a class="nav-link" href="Contact Us.html">Contact Us</a> 
+                </li>
+          </div>
+        </ul>
+    </nav>
+
+		<div class="hero">
+      <br>
+      <br>
+      <br>
+			<h1 align="center">Turning Point Creation</h1><p1 class="center">Stunning photography to capture your special moments</p1>
+		</div>
+</header>
+
+<main>
+		
+  <br>
+  <br>
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="first.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="third.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="A1.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="F5.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="A3.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="A2.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="first.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="third.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="A1.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="F5.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="A3.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="A2.jpg" style="width:100%" onclick="currentSlide(6)" alt="">
+    </div>
+  </div>
+
+
+<div class="card-container">
+  <div class="card">
+    <div class="card-header">Step 1</div>
+    <br>
+    <div class="card-body">
+      Whether it is outdoor or indoor shoot venue, our guide will be there through all steps to be taken necessary for a stress-free experience.
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header">Step 2</div>
+    <br>
+    <div class="card-body">
+      We will scout your location, find perfect lights, design your dream bouquet, make sure you have everything you need to celebrate your day. Leave it to us.
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header">Step 3</div>
+    <br>
+    <div class="card-body">
+      We will ensure memories of your day are preserved! We work with you to choose your best photo.
+    </div>
+  </div>
+</div>
+
+
+<div class="center">
+<a href="booking.html">
+<button type="button" class="button">BOOK YOUR DAY NOW! </button>
+</a>
+</div>
+
+</main>
+<br>
+<br>
+<br>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<script>
+  (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+</script>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links li");
+
+    hamburger.addEventListener("click", () => {
+      // Toggle the navigation menu on click
+      navLinks.classList.toggle("open");
+
+      // Animate the hamburger icon
+      hamburger.classList.toggle("open");
+
+      // Animate the links
+      links.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+      });
+    });
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<footer>
+	<p>&copy; 2023 Turning Point Creation</p>
+</footer>
+</body>
+
+</html>
